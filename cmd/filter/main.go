@@ -12,6 +12,12 @@ import (
 	"github.com/slackingfred/illumio-assessment-24h2/pkg/lookup"
 )
 
+// Command-line arguments.
+// Example:
+//   - Use specified lookup table and write to stdout
+//     go run cmd/filter/main.go -lookup testdata/lookup_table.csv < testdata/flow.log
+//   - Use default lookup table and write to specified files
+//     go run cmd/filter/main.go -tag-output 1.log -combination-output 2.log < testdata/flow_non_tcp.log
 var (
 	lookupTablePath      = flag.String("lookup", "testdata/lookup_table.csv", "path to the lookup table")
 	tagCountFile         = flag.String("tag-output", "", "path to the tag count output file - omit for stdout")
