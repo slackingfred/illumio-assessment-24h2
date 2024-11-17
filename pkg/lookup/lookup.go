@@ -44,6 +44,7 @@ func (t *Table) LoadFile(fname string) error {
 			}
 		}
 		header = false
+		// Case insensitivity by storing protocol in lowercase
 		t.mapping[fmt.Sprintf("%s-%s", rec[0], strings.ToLower(rec[1]))] = rec[2]
 	}
 	if err != io.EOF {
